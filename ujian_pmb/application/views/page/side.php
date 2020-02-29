@@ -43,12 +43,12 @@
               <span>Skor / Rangking</span>
               </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="app/update_profil">
               <i class="fa fa-key"></i>
               <span>Ubah Password</span>
               </a>
-          </li>
+          </li> -->
           <li>
             <a href="Pengaturan">
               <i class="fa fa-suitcase"></i>

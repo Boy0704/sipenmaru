@@ -9,9 +9,11 @@ class App extends CI_Controller {
         $this->load->model('No_urut');
     }
 
-    public function bypass_pmb($username)
+    public function bypass_ujian_pmb($username)
     {
-        $cek_user = $this->db->query("SELECT * FROM user WHERE username='$username' ");
+        // Load database kedua
+        $web_cat = $this->load->database('web_cat', TRUE);
+        $cek_user = $web_cat->query("SELECT * FROM user WHERE username='$username' ");
         if ($cek_user->num_rows() > 0) {
             foreach ($cek_user->result() as $row) {
                 

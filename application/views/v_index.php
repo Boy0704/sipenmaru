@@ -124,7 +124,7 @@
                     </tr> -->
                     <tr>
                       <td><i class="glyphicon glyphicon-check"></i></td>
-                      <td><a href="ujian_pmb" target="_blank"> Ujian PMB</a></td>
+                      <td><a href="app/bypass_ujian_pmb/<?php echo $this->session->userdata('username') ?>" target="_blank"> Ujian PMB</a></td>
                     </tr>
                     <tr>
                       <td><i class="glyphicon glyphicon-check"></i></td>
@@ -139,6 +139,10 @@
                       <td><a href="app/logout"> Logout</a></td>
                     </tr>
                     <?php } elseif ($this->session->userdata('level') == 'admin') {?>
+                      <tr>
+                      <td><i class="glyphicon glyphicon-check"></i></td>
+                      <td><a href="app/bypass_ujian_pmb/<?php echo $this->session->userdata('username'); ?>"> Manajemen Ujian PMB</a></td>
+                    </tr>
                     <tr>
                       <td><i class="glyphicon glyphicon-check"></i></td>
                       <td><a href="konten"> Manajemen Konten</a></td>
