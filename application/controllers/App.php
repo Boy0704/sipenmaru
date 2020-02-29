@@ -178,7 +178,7 @@ class App extends CI_Controller {
     		$simpan = $this->db->insert('pendaftaran', $data);
     		if ($simpan) {
     			$this->db->insert('users',array('username'=>$kode_pendaftaran,'password'=>md5($password),'level'=>'mahasiswa'));
-    			$this->session->set_flashdata('pesan','Selamat anda telah berhasil mendaftar di STIE Pontianak');
+    			$this->session->set_flashdata('pesan','Selamat anda telah berhasil mendaftar !');
     			$this->session->set_flashdata('username',$kode_pendaftaran);
     			$this->session->set_flashdata('password',$password);
     			redirect('app/selesai_daftar');
