@@ -16,6 +16,15 @@ class App extends CI_Controller {
 		$this->load->view('v_index', $data);
     }
 
+    public function rangking_batch($batch_id)
+    {
+        $data = array(
+            'judul_page' => 'Rangking User',
+            'konten' => 'rangking_batch',
+        );
+        $this->load->view('v_index', $data);
+    }
+
     public function list_batch()
     {
     	$userid = $this->session->userdata('id_user');

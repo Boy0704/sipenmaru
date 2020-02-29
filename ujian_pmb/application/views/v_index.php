@@ -132,6 +132,14 @@
   <script>
   $(document).ready(function(){
     $('.tabel-data').DataTable();
+    $('.rangking').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    });
 });
   </script>
 

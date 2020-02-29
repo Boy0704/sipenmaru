@@ -17,7 +17,7 @@
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $siswa->nama_batch ?></td>
 			<td style="text-align:center" width="200px">
-				<a href="app/detail_rangking_siswa/<?php echo $siswa->batch_id ?>" class="btn btn-info">Pilih</a>
+				<a href="app/rangking_batch/<?php echo $siswa->batch_id ?>" class="btn btn-info">Pilih</a>
 			</td>
 		</tr>
                 <?php

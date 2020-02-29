@@ -1,5 +1,21 @@
 <?php 
 
+function target_lulus_perbatch($batch_id)
+{
+	$CI 	=& get_instance();
+	$data = $CI->db->query("SELECT SUM(nilai_lulus) as nilai_lulus FROM `v_paket_soal` WHERE batch_id='$batch_id' ")->row();
+	$nilai = $data->nilai_lulus;
+	return $nilai;
+}
+
+function total_nilai_perbatch($user_id,$batch_id)
+{
+	$CI 	=& get_instance();
+	$data = $CI->db->query("SELECT SUM(total_nilai) as total_nilai FROM `v_total_nilai` WHERE user_id='$user_id' and batch_id='$batch_id' ")->row();
+	$nilai = $data->total_nilai;
+	return $nilai;
+}
+
 function total_nilai_ujian($user_id, $soal_id)
 {
 	$CI 	=& get_instance();
