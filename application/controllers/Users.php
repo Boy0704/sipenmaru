@@ -129,6 +129,15 @@ class Users extends CI_Controller
 	    );
 
             $this->Users_model->update($this->input->post('id_user', TRUE), $data);
+
+            // Load database kedua
+            $web_cat = $this->load->database('web_cat', TRUE);
+            $web_cat->where('user_id', 1);
+            $web_cat->update('user', array(
+                'username' => $this->input->post('username',TRUE),
+                'password' => md5($this->input->post('password',TRUE)),
+            ));
+
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('users'));
         }

@@ -118,9 +118,13 @@
                       <td><i class="glyphicon glyphicon-check"></i></td>
                       <td><a href="app/ubah_daftar/<?php echo $this->session->userdata('username') ?>" target="_blank"> Ubah Data Pendaftaran</a></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                       <td><i class="glyphicon glyphicon-check"></i></td>
                       <td><a href="app/cetak_kartu/<?php echo $this->session->userdata('username') ?>" target="_blank"> Cetak Kartu Ujian</a></td>
+                    </tr> -->
+                    <tr>
+                      <td><i class="glyphicon glyphicon-check"></i></td>
+                      <td><a href="ujian_pmb" target="_blank"> Ujian PMB</a></td>
                     </tr>
                     <tr>
                       <td><i class="glyphicon glyphicon-check"></i></td>

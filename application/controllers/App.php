@@ -9,6 +9,24 @@ class App extends CI_Controller {
         $this->load->model('No_urut');
     }
 
+    public function bypass_pmb($username)
+    {
+        $cek_user = $this->db->query("SELECT * FROM user WHERE username='$username' ");
+        if ($cek_user->num_rows() > 0) {
+            foreach ($cek_user->result() as $row) {
+                
+                $sess_data['id_user'] = $row->user_id;
+                $sess_data['nama'] = $row->nama_lengkap;
+                $sess_data['username'] = $row->username;
+                $sess_data['level'] = $row->akses;
+                $this->session->set_userdata($sess_data);
+            }
+            
+
+            redirect('ujian_pmb/app/index');
+        }
+    }
+
 	public function index()
 	{
 		$data = array(
@@ -178,6 +196,17 @@ class App extends CI_Controller {
     		$simpan = $this->db->insert('pendaftaran', $data);
     		if ($simpan) {
     			$this->db->insert('users',array('username'=>$kode_pendaftaran,'password'=>md5($password),'level'=>'mahasiswa'));
+
+                //insert user web cat
+                // Load database kedua
+                $web_cat = $this->load->database('web_cat', TRUE);
+                $web_cat->insert('user',array(
+                    'username'=>$kode_pendaftaran,
+                    'password'=>md5($password),'level'=>'siswa',
+                    'nama_lengkap'=>$nama,
+                    'no_hp'=>$no_telp,
+                ));
+
     			$this->session->set_flashdata('pesan','Selamat anda telah berhasil mendaftar !');
     			$this->session->set_flashdata('username',$kode_pendaftaran);
     			$this->session->set_flashdata('password',$password);
