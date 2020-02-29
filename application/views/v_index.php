@@ -6,11 +6,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="Pendaftaran Akbid Keluarga Bunda Jambi" content="Sistem Informasi Pendaftaran Berbasis Online Akbib Keluarga Bunda Jambi">
-  <meta name="IT AKBID KELUARGA BUNDA JAMBI" content="">
+  <meta name="Pendaftaran Mahasiswa Baru STIE IGI" content="Sistem Informasi Pendaftaran Berbasis Online Mahasiswa Baru STIE IGI">
+  <meta name="IT STIE IGI" content="">
   <!--<link rel="icon" href="assets/logo.png">-->
 
-  <title>Penerimaan Mahasiswa Baru Akbid Keluarga Bunda Jambi</title>
+  <title>Penerimaan Mahasiswa Baru STIE IGI</title>
   <base href="<?php echo base_url() ?>" />
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/bootstrap-datepicker.css" rel="stylesheet">
@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo base_url() ?>">Sipenmaru STIKES Keluarga Bunda Jambi</a>
+      <a class="navbar-brand" href="<?php echo base_url() ?>">Sipenmaru STIE IGI</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -201,7 +201,7 @@
     <hr>
     <div class="col-sm-12">
         <footer style="text-align: center">
-            <p>Hak Cipta &copy; 2019 - 2020, IT Akbid Keluarga Bunda Jambi </p>
+            <p>Hak Cipta &copy; 2019 - 2020, IT STIE IGI </p>
         </footer>
     </div>
 </div>
@@ -224,9 +224,9 @@
             });
 	</script><script src="assets/form-validator.min.js"></script>
   <!-- BEGIN JIVOSITE CODE {literal} -->
-  <script type='text/javascript'>
+  <!-- <script type='text/javascript'>
   (function(){ var widget_id = 'd1aWCNVAQD';var d=document;var w=window;function l(){
-  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script> -->
   <!-- {/literal} END JIVOSITE CODE -->
 
 </body>
