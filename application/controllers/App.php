@@ -204,7 +204,7 @@ class App extends CI_Controller {
                 $web_cat = $this->load->database('web_cat', TRUE);
                 $web_cat->insert('user',array(
                     'username'=>$kode_pendaftaran,
-                    'password'=>md5($password),'level'=>'siswa',
+                    'password'=>md5($password),'akses'=>'siswa',
                     'nama_lengkap'=>$nama,
                     'no_hp'=>$no_telp,
                 ));
