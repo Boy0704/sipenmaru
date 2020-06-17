@@ -21,6 +21,11 @@ class App extends CI_Controller {
         }
     }
 
+    public function export_maru()
+    {
+        $this->load->view('pendaftaran/maru_export');
+    }
+
     public function bypass_ujian_pmb($username)
     {
         // Load database kedua
