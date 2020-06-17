@@ -32,7 +32,8 @@
             <tr>
                 <th>No</th>
 		<th>No Pendaftaran</th>
-		<th>Nama Lengkap</th>
+        <th>Nama Lengkap</th>
+		<th>Status Bayar</th>
 		
 		<th>Action</th>
             </tr><?php
@@ -42,7 +43,8 @@
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $pendaftaran->no_pendaftaran ?></td>
-			<td><?php echo $pendaftaran->nama_lengkap ?></td>
+            <td><?php echo $pendaftaran->nama_lengkap ?></td>
+			<td><?php echo ($pendaftaran->status_bayar == 'paid') ? '<span class="label label-success">Lunas</span>' : '<span class="label label-danger">Belum Lunas</span>' ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('pendaftaran/read/'.$pendaftaran->id_pendaftaran),'Detail'); 
