@@ -9,6 +9,18 @@ class App extends CI_Controller {
         $this->load->model('No_urut');
     }
 
+    public function link_tagihan($username)
+    {
+        $this->db->where('no_tagihan', 'maru_'.$username);
+        $cek = $this->db->get('xendit_tagihan');
+        if ($cek->num_rows() > 0) {
+            $url = $cek->row()->invoice_url;
+            header("location:$url");
+        } else {
+            redirect('app','refresh');
+        }
+    }
+
     public function bypass_ujian_pmb($username)
     {
         // Load database kedua
@@ -204,7 +216,7 @@ class App extends CI_Controller {
             // $expried_date = expiry_date(get_waktu(),date('2020-05-20 23:59:59'));
 
             $params = ['external_id' => "maru_".$kode_pendaftaran,
-                'payer_email' => '',
+                'payer_email' => 'tagihan@gmail.com',
                 'description' => 'Pembayaran Pendaftaran Mahasiswa Baru',
                 'amount' => 150000,
                 // 'invoice_duration' => $expried_date
@@ -212,7 +224,7 @@ class App extends CI_Controller {
             $createInvoice = \Xendit\Invoice::create($params);
             $id_xendit = $createInvoice['id'];
 
-            $getInvoice = \Xendit\Invoice::retrieve($id);
+            $getInvoice = \Xendit\Invoice::retrieve($id_xendit);
             // log_data($getInvoice);
             $url_back = $getInvoice['invoice_url'];
 
