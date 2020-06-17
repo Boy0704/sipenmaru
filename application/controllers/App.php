@@ -218,7 +218,7 @@ class App extends CI_Controller {
             // input xendit
             require APPPATH.'vendor/autoload.php';
         
-            Xendit::setApiKey("xnd_development_gmmhA1RvN3dBGScgGuSGpMKVdLi8rDHXxaOUNGmw1mxZwdm40AXnHpDIBIt2Ezg");
+            Xendit::setApiKey("xnd_development_eHqSCISZV315qepFCIjOzEnHgxYvJtz1kSOw9aJB35tVhPJvsAvLbo3f3IXEr9");
 
             // $expried_date = expiry_date(get_waktu(),date('2020-05-20 23:59:59'));
 
