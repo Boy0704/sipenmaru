@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+use Xendit\Xendit;
 class App extends CI_Controller {
 
 	function __construct()
@@ -195,7 +195,35 @@ class App extends CI_Controller {
             </script>
 		    <?php
 		} else {
+
+            // input xendit
+            require APPPATH.'vendor/autoload.php';
+        
+            Xendit::setApiKey("xnd_development_gmmhA1RvN3dBGScgGuSGpMKVdLi8rDHXxaOUNGmw1mxZwdm40AXnHpDIBIt2Ezg");
+
+            // $expried_date = expiry_date(get_waktu(),date('2020-05-20 23:59:59'));
+
+            $params = ['external_id' => "maru_".$kode_pendaftaran,
+                'payer_email' => '',
+                'description' => 'Pembayaran Pendaftaran Mahasiswa Baru',
+                'amount' => 150000,
+                // 'invoice_duration' => $expried_date
+            ];
+            $createInvoice = \Xendit\Invoice::create($params);
+            $id_xendit = $createInvoice['id'];
+
+            $getInvoice = \Xendit\Invoice::retrieve($id);
+            // log_data($getInvoice);
+            $url_back = $getInvoice['invoice_url'];
+
     		$simpan = $this->db->insert('pendaftaran', $data);
+            $this->db->insert('xendit_tagihan', array(
+                'no_tagihan' => "maru_".$kode_pendaftaran,
+                'amount' => 150000,
+                'label_tagihan' => "maru",
+                'id_xendit'=> $id_xendit,
+                'invoice_url' => $url_back,
+            ));
     		if ($simpan) {
     			$this->db->insert('users',array('username'=>$kode_pendaftaran,'password'=>md5($password),'level'=>'mahasiswa'));
 

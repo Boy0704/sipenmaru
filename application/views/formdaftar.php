@@ -156,7 +156,7 @@
                 			</select>
                 		</td>
                 	</tr>
-                    <tr>
+                    <!-- <tr>
                         <th width="200px">Pembayaran Pendaftaran</th>
                         <td>
                             <select name="metode_pembayaran" class="form-control" required="">
@@ -165,7 +165,7 @@
                                 <option value="Bayar dikampus">Bayar dikampus</option>
                             </select>
                         </td>
-                    </tr>
+                    </tr> -->
                 	<tr>
                 		<th width="200px"></th>
                 		<td>
