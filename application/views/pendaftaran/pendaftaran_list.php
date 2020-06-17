@@ -1,6 +1,7 @@
 <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <?php //echo anchor(site_url('pendaftaran/create'),'Create', 'class="btn btn-primary"'); ?>
+                <a href="app/export_maru" target="_blank" class="btn btn-info">Export Excel</a>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
