@@ -146,16 +146,20 @@
                 		<td><input type="text" name="tempat_sttb" class="form-control" placeholder="Tempat Ijazah dikeluarkan"></td>
                 	</tr>
                 	<tr>
-                		<th width="200px">Pilihan Studi</th>
-                		<td>
-                			<select name="pilihan_studi" class="form-control" required="">
-                				<option value="">Pilihan Program Studi</option>
-                				<option value="Kebidanan">Kebidanan</option>
-                				<option value="Gizi">Gizi</option>
-                				<option value="Farmasi">Farmasi</option>
-                			</select>
-                		</td>
-                	</tr>
+                        <th width="200px">Mendapatkan Informasi Kampus</th>
+                        <td><input type="text" name="informasi_kampus" class="form-control" placeholder="Masukkan Nama/no telp nya, jika dari orang lain atau pegawai kampus"></td>
+                    </tr>
+                    <tr>
+                        <th width="200px">Pilihan Studi</th>
+                        <td>
+                            <select name="pilihan_studi" class="form-control" required="">
+                                <option value="">Pilihan Program Studi</option>
+                                <option value="Akuntansi">Akuntansi</option>
+                                <option value="Manajemen">Manajemen</option>
+                                <option value="Magister Manajemen">Magister Manajemen</option>
+                            </select>
+                        </td>
+                    </tr>
                     <!-- <tr>
                         <th width="200px">Pembayaran Pendaftaran</th>
                         <td>

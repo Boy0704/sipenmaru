@@ -154,6 +154,7 @@ class App extends CI_Controller {
 		$kode_pendaftaran = $this->No_urut->buat_kode_pendaftaran();
 		$tahun_lulus = $this->input->post('tahun_lulus');
 		$metode_pembayaran = $this->input->post('metode_pembayaran');
+        $informasi_kampus = $this->input->post('informasi_kampus');
 
 		date_default_timezone_set('Asia/Jakarta');
 			$nmfile = "pmb_".time();
@@ -194,6 +195,7 @@ class App extends CI_Controller {
 			'pilihan_studi' => $pilihan_studi,
 			'tahun_lulus' => $tahun_lulus,
 			'metode_pembayaran' => $metode_pembayaran,
+            'informasi_kampus' => $informasi_kampus,
 			'foto' => $dfile,
 			'tgl_buat' => date('Y-m-d'),
             'jam_buat' => date('H:i:s'),
