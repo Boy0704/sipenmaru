@@ -2,7 +2,7 @@
             <div class="col-md-4">
                 <?php //echo anchor(site_url('pendaftaran/create'),'Create', 'class="btn btn-primary"'); ?>
                 <a href="app/export_maru" target="_blank" class="btn btn-info">Export Excel</a>
-                <a href="app/export_maru_lulus" target="_blank" class="btn btn-success">Export ke Siakad</a>
+                <a href="app/export_maru_lulus" target="_blank" onclick="javasciprt: return confirm('apakah kamu yakin sudah memilih calon mahasiswa baru yang lulus ?')" class="btn btn-success">Export ke Siakad</a>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
