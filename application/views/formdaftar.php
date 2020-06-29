@@ -145,6 +145,19 @@
                 		<th width="200px">Tempat Ijazah dikeluarkan</th>
                 		<td><input type="text" name="tempat_sttb" class="form-control" placeholder="Tempat Ijazah dikeluarkan"></td>
                 	</tr>
+                    <tr>
+                        <th width="200px">Upload File Lampiran</th>
+                        <td>
+                            <p>
+                                <div style="color: red">
+                                    *) File yang di upload berupda : ijazah, sertifikat, SKHU, dll. <br>
+                                    *) File di arsipkan dengan format .rar atau .zip <br>
+                                    *) Ukuran file maksimal 2 MB.
+                                </div>
+                            </p>
+                            <input type="text" name="userfile" class="form-control" placeholder="FILE UPLOAD"></td>
+                    </tr>
+
                 	<tr>
                         <th width="200px">Mendapatkan Informasi Kampus</th>
                         <td><input type="text" name="informasi_kampus" class="form-control" placeholder="Masukkan Nama/no telp nya, jika dari orang lain atau pegawai kampus"></td>

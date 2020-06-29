@@ -34,6 +34,7 @@
                 <th>No</th>
 		<th>No Pendaftaran</th>
         <th>Nama Lengkap</th>
+        <th>Lampiran</th>
 		<th>Status Bayar</th>
 		
 		<th>Action</th>
@@ -45,6 +46,7 @@
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $pendaftaran->no_pendaftaran ?></td>
             <td><?php echo $pendaftaran->nama_lengkap ?></td>
+            <td><a href="<?php echo base_url() ?>files/file_maru/<?php echo $pendaftaran->file_lampiran ?>" target="_blank" class="label label-success">Download File</a></td>
 			<td><?php echo ($pendaftaran->status_bayar == 'paid') ? '<span class="label label-success">Lunas</span>' : '<span class="label label-danger">Belum Lunas</span>' ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 

@@ -161,6 +161,39 @@ class App extends CI_Controller {
 		$metode_pembayaran = $this->input->post('metode_pembayaran');
         $informasi_kampus = $this->input->post('informasi_kampus');
 
+        if ($_FILES) {
+            $return = array();
+
+            $config['upload_path'] = './files/file_maru/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['max_size'] = '2048';
+            $config['overwrite'] = true;
+            $config['file_name'] = 'lampiran_'.time();
+
+            $this->upload->initialize($config); // Load konfigurasi uploadnya
+            if($this->upload->do_upload('userfile')){ // Lakukan upload dan Cek jika proses upload berhasil
+                // Jika berhasil :
+                $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+                // return $return;
+            }else{
+                // Jika gagal :
+                $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+
+                ?>
+                <script type="text/javascript">
+                    alert('Eror upload : <?php echo $return['error'] ?>');
+                    window.location = '<?php echo base_url() ?>app/formdaftar';
+                </script>
+                <?php
+                exit();
+                // return $return;
+            }
+
+        }
+
+
+
+
 		date_default_timezone_set('Asia/Jakarta');
 			$nmfile = "pmb_".time();
             $config['upload_path'] = './files/foto';
@@ -202,6 +235,7 @@ class App extends CI_Controller {
 			'metode_pembayaran' => $metode_pembayaran,
             'informasi_kampus' => $informasi_kampus,
 			'foto' => $dfile,
+            'file_lampiran' => $return['file']['file_name'],
 			'tgl_buat' => date('Y-m-d'),
             'jam_buat' => date('H:i:s'),
 		);
