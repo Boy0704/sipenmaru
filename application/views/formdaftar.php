@@ -150,7 +150,7 @@
                         <td>
                             <p>
                                 <div style="color: red">
-                                    *) File yang di upload berupda : ijazah, sertifikat, SKHU, dll. <br>
+                                    *) File yang di upload berupa : ijazah, sertifikat, SKHU, dll. <br>
                                     *) File di arsipkan dengan format .rar atau .zip <br>
                                     *) Ukuran file maksimal 2 MB.
                                 </div>
