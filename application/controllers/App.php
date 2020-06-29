@@ -26,6 +26,13 @@ class App extends CI_Controller {
         $this->load->view('pendaftaran/maru_export');
     }
 
+    public function update_status_lulus($id_pendaftaran,$status)
+    {
+        $this->db->where('id_pendaftaran', $id_pendaftaran);
+        $this->db->update('pendaftaran', array('status_terima'=>$status));
+        redirect('pendaftaran','refresh');
+    }
+
     public function bypass_ujian_pmb($username)
     {
         // Load database kedua
