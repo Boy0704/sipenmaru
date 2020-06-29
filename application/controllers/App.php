@@ -32,28 +32,39 @@ class App extends CI_Controller {
         $this->db->where('status_terima', '1');
         $pendaftaran = $this->db->get('pendaftaran');
 
-        foreach ($pendaftaran->result() as $rw) {
-            $this->db->insert('student_mahasiswa', array(
-                'nama' => $rw->nama_lengkap,
-                'tempat_lahir' => $rw->tempat,
-                'tanggal_lahir' => $rw->tgl_lahir,
-                'alamat' => $rw->alamat,
-                'rt' => $rw->rt,
-                'rw' => $rw->rw,
-                'no_hp' => $rw->no_telp,
-                'semester' => '1',
-            ));
+        if ($pendaftaran->num_rows() > 0) {
+            foreach ($pendaftaran->result() as $rw) {
+                $this->db->insert('student_mahasiswa', array(
+                    'nama' => $rw->nama_lengkap,
+                    'tempat_lahir' => $rw->tempat,
+                    'tanggal_lahir' => $rw->tgl_lahir,
+                    'alamat' => $rw->alamat,
+                    'rt' => $rw->rt,
+                    'rw' => $rw->rw,
+                    'no_hp' => $rw->no_telp,
+                    'semester' => '1',
+                ));
 
-            $this->db->where('id_pendaftaran', $rw->id_pendaftaran);
-            $this->db->update('pendaftaran', array('status_export'=>'1'));
+                $this->db->where('id_pendaftaran', $rw->id_pendaftaran);
+                $this->db->update('pendaftaran', array('status_export'=>'1'));
+            }
+
+            ?>
+            <script type="text/javascript">
+                alert('Data calon mahasiswa baru berhasil di export ke siakad, silahkan update datanya di siakad !');
+                window.location = '<?php echo base_url('pendaftaran') ?>';
+            </script>
+            <?php
+        } else {
+            ?>
+            <script type="text/javascript">
+                alert('tidak ada calon mahasiswa yg lulus !');
+                window.location = '<?php echo base_url('pendaftaran') ?>';
+            </script>
+            <?php
         }
 
-        ?>
-        <script type="text/javascript">
-            alert('Data calon mahasiswa baru berhasil di export ke siakad, silahkan update datanya di siakad !');
-            window.location = '<?php echo base_url('pendaftaran') ?>';
-        </script>
-        <?php
+        
 
         
     }
