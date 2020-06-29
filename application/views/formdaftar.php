@@ -155,7 +155,7 @@
                                     *) Ukuran file maksimal 2 MB.
                                 </div>
                             </p>
-                            <input type="text" name="userfile" class="form-control" placeholder="FILE UPLOAD"></td>
+                            <input type="file" name="userfile" class="form-control" placeholder="FILE UPLOAD"></td>
                     </tr>
 
                 	<tr>
