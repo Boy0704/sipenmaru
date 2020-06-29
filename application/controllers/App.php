@@ -43,6 +43,8 @@ class App extends CI_Controller {
             
 
             redirect('ujian_pmb/app/index');
+        } else {
+            echo "tidak ada user admin aktif";
         }
     }
 
