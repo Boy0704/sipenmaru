@@ -221,7 +221,7 @@ class App extends CI_Controller {
             $config['max_size'] = '2048';
             $config['overwrite'] = true;
             $config['file_name'] = 'lampiran_'.time();
-
+            $this->load->library('upload', $config);
             $this->upload->initialize($config); // Load konfigurasi uploadnya
             if($this->upload->do_upload('userfile')){ // Lakukan upload dan Cek jika proses upload berhasil
                 // Jika berhasil :
