@@ -217,7 +217,7 @@ class App extends CI_Controller {
             $return = array();
 
             $config['upload_path'] = './files/file_maru/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['allowed_types'] = 'rar|zip';
             $config['max_size'] = '2048';
             $config['overwrite'] = true;
             $config['file_name'] = 'lampiran_'.time();
