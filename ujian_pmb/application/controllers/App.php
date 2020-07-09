@@ -164,7 +164,7 @@ class App extends CI_Controller {
 
 
     	$userid = $this->session->userdata('id_user');
-    	$this->db->order_by('butir_soal_id', 'RANDOM');
+    	$this->db->order_by('butir_soal_id', 'ASC');
     	$this->db->select('butir_soal_id');
     	$data = array(
     		'userid' => $userid,
